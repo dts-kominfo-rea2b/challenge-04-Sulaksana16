@@ -9,9 +9,12 @@ const dates = [
 
 // TODO: Buatlah fungsi createDate
 const createDate = (datas, index = undefined) => {
-  const toSeconds = datas.map(date => Math.floor(Date.parse(date) / 1000))
-  const results = (index == undefined) ? toSeconds : toSeconds.splice(index, 1) 
-  return results.sort((a, b) => (a-b)).join("-")
+  const epochTimeInSec = []
+  for (const data of datas) {
+    epochTimeInSec.push(Math.floor(Date.parse(data) / 1000).toString())
+  }
+  const result = (index == undefined) ? epochTimeInSec.sort((a,b) => (a-b)).join("-") : epochTimeInSec[index]
+  return result
 };
 
 // ! JANGAN DIMODIFIKASI

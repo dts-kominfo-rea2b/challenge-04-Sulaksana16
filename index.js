@@ -13,8 +13,7 @@ const createDate = (datas, index = undefined) => {
   for (const data of datas) {
     epochTimeInSec.push(Math.floor(Date.parse(data) / 1000).toString())
   }
-  const result = (index == undefined) ? epochTimeInSec.sort((a,b) => (a-b)).join("-") : epochTimeInSec[index]
-  return result
+  return (index == undefined) ? epochTimeInSec.sort((a,b) => (a-b)).join("-") : epochTimeInSec[index]
 };
 
 // ! JANGAN DIMODIFIKASI
